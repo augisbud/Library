@@ -1,40 +1,58 @@
 package models;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
+import java.time.Period;
+
 import com.google.gson.Gson;
 
 public class Person {
-    public static int count = 0;
-    String name;
-    int age;
-    final Date createdAt = new Date();
+    private static int count = 0;
+    private String name;
+    private Date birthDate;
+    private final List<String> booksInPossession = new ArrayList<String>();
 
+    private final Date createdAt = new Date();
+
+    public static int getCount() { return count; }
     public String getName() { return this.name; }
     public void setName(String name) { this.name = name; }
-    public int getAge() { return this.age; }
-    public void setAge(int age) { this.age = age; }
+    public Date getBirthDate() { return this.birthDate; }
+    public void setBirthDate(Date birthDate) { this.birthDate = birthDate; }
+    public List<String> getBooksInPossession() { return this.booksInPossession; }
     public Date getCreatedAt() { return this.createdAt; }
 
     public Person() {
-        this("Administratorius", 99);
+        this("Administratorius", new Date());
     }
 
-    public Person(String name, int age) {
+    public Person(String name, Date birthDate) {
         count++;
 
         this.name = name;
-        this.age = age;
+        this.birthDate = birthDate;
     }
 
     public void println() {
         System.out.println(new Gson().toJson(this));
     }
 
-    public void contact() {
-        System.out.println("Asmuo gauna žinutę, kuri prašo susisiekti su biblioteka.");
+    public void takeBook(String ISBN) {
+        booksInPossession.add(ISBN);
     }
 
-    public void contact(String message) {
-        System.out.println("Asmuo gauna žinutę, kuri prašo susisiekti su biblioteka ir pateikia papildomą informacija: " + message);
+    public void takeAgeRestrictedBook(String ISBN, int minimumAge) {
+        LocalDate today = LocalDate.now();
+        var years = Period.between(this.birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), today).getYears();
+        if(years > minimumAge) {
+            booksInPossession.add(ISBN);
+        }
+    }
+
+    public void returnBook(String ISBN) {
+        this.booksInPossession.remove(ISBN);
     }
 }
