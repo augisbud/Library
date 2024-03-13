@@ -1,42 +1,35 @@
-import models.Person;
+import exceptions.UnderageException;
+import models.entities.Person;
+import models.literature.Book;
+import models.literature.Publication;
 
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Main {
     public static void main(String[] args) {
-        var people = new Person[] {
-                new Person("Augustas", new GregorianCalendar(2003, GregorianCalendar.JANUARY, 13).getTime()),
-                new Person()
-        };
+        Person individual = new Person("Augustas Budnikas", new GregorianCalendar(2004, Calendar.JANUARY, 13).getTime());
 
-        // Atspausdiname static klasės lauką (šiuo metu sukurtų asmenų skaičių)
-        System.out.println(Person.getCount());
+        try
+        {
+            individual.takeAgeRestrictedBook("987654321", 20);
+            individual.takeAgeRestrictedBook("123456789", 30);
+        }
+        catch (UnderageException e)
+        {
+            System.out.println(e.getMessage() + " If this is not the expected behaviour, please contact your Administrator and provide this UUID as a reference: " + e.getUuid().toString());
+        }
 
-        // Išbandome setBirthDate(Date) ir getBirthDate() funkcijas
-        people[0].setBirthDate(new GregorianCalendar(2004, GregorianCalendar.JANUARY, 13).getTime());
-        System.out.println(people[0].getBirthDate());
+        System.out.println("Books in possession for " + individual.getName() + ":");
 
-        // Išbandome getCreatedAt() funkciją
-        System.out.println(people[0].getCreatedAt());
+        for (String book : individual.getBooksInPossession()) {
+            System.out.println(book);
+        }
 
-        // Išbandome takeBook(string) funkciją
-        people[0].takeBook("123-4567-890");
-        System.out.println(people[0].getBooksInPossession().getFirst());
+        Publication release = new Book("978-3-16-148410-0", Publication.Genre.ACTION, "Example Book", Arrays.asList("Author1", "Author2"), "PublisherName", new Date(), 18, 300, "First Edition", Publication.Language.EN, Book.Format.PAPERBACK);
 
-        // Išbandome setName(String) ir getName() funkcijas
-        people[1].setName("Algirdas");
-        System.out.println(people[1].getName());
-
-        // Išbandome println() funkciją
-        people[1].println();
-
-        // Išbandome takeAgeRestrictedBook(String, int) funkcija
-        people[0].takeAgeRestrictedBook("987-6543-210", 15);
-        people[0].takeAgeRestrictedBook("111-2222-333", 50);
-        people[0].println();
-
-        // Išbandome returnBook(String) funkciją
-        people[0].returnBook("987-6543-210");
-        people[0].println();
+        System.out.println(release.generateDisplayTitle());
     }
 }
