@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9c76772-2505-4ac0-8182-e997a1fcf7b9" name="Changes" comment="OP2-Presented">
-      <change afterPath="$PROJECT_DIR$/src/exceptions/UnderageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/literature/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/literature/Journal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/literature/Publication.java" afterDir="false" />
+    <list default="true" id="e9c76772-2505-4ac0-8182-e997a1fcf7b9" name="Changes" comment="OP3-Presented, OP4, OP5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,30 +35,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +78,8 @@
       <workItem from="1707895077885" duration="6757000" />
       <workItem from="1708253282247" duration="403000" />
       <workItem from="1710183100352" duration="1733000" />
-      <workItem from="1710273094474" duration="6792000" />
+      <workItem from="1710273094474" duration="8678000" />
+      <workItem from="1710520273346" duration="55000" />
     </task>
     <task id="LOCAL−00001" summary="OP2">
       <option name="closed" value="true" />
@@ -99,7 +95,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1707906249799</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="OP3-Presented, OP4, OP5">
+      <option name="closed" value="true" />
+      <created>1710328479154</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1710328479154</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,7 +111,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OP2" />
     <MESSAGE value="OP2-Presented" />
-    <option name="LAST_COMMIT_MESSAGE" value="OP2-Presented" />
+    <MESSAGE value="OP3-Presented, OP4, OP5" />
+    <option name="LAST_COMMIT_MESSAGE" value="OP3-Presented, OP4, OP5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -136,12 +140,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/models/entities/Person.java</url>
-          <line>23</line>
-          <properties field="count" class="models.entities.AbstractPerson" />
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

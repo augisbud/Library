@@ -87,7 +87,6 @@ public class Person extends AbstractPerson implements RestrictedActions {
         super(name, birthDate);
     }
 
-    @Override
     public void takeAgeRestrictedBook(String ISBN, int minimumAge) throws UnderageException {
         LocalDate today = LocalDate.now();
         var years = Period.between(this.birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), today).getYears();
