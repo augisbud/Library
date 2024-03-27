@@ -1,5 +1,7 @@
+import exceptions.LibraryException;
 import exceptions.UnderageException;
 import models.entities.Person;
+import models.entities.RestrictedActions;
 import models.literature.Book;
 import models.literature.Publication;
 
@@ -20,6 +22,20 @@ public class Main {
         catch (UnderageException e)
         {
             System.out.println(e.getMessage() + " If this is not the expected behaviour, please contact your Administrator and provide this UUID as a reference: " + e.getUuid().toString());
+        }
+        catch (LibraryException e)
+        {
+            System.out.println(e.getMessage() + " Unexpected behaviour encountered.");
+        }
+
+        RestrictedActions a = new Person();
+        a.takeBook("2222222222");
+
+        try
+        {
+            individual.takeAgeRestrictedBook("1234", 10);
+        } catch (LibraryException e) {
+            System.out.println(e.getMessage() + " Unexpected behaviour encountered.");
         }
 
         System.out.println("Books in possession for " + individual.getName() + ":");

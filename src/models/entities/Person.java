@@ -2,22 +2,16 @@ package models.entities;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.time.Period;
-import java.util.UUID;
 
 import com.google.gson.Gson;
+import exceptions.LibraryException;
 import exceptions.UnderageException;
 
 interface PersonActions {
     void takeBook(String ISBN);
     void returnBook(String ISBN);
-}
-
-interface RestrictedActions extends PersonActions {
-    void takeAgeRestrictedBook(String ISBN, int minimumAge) throws UnderageException;
 }
 
 abstract class AbstractPerson implements PersonActions {
@@ -87,7 +81,10 @@ public class Person extends AbstractPerson implements RestrictedActions {
         super(name, birthDate);
     }
 
-    public void takeAgeRestrictedBook(String ISBN, int minimumAge) throws UnderageException {
+    public void takeAgeRestrictedBook(String ISBN, int minimumAge) throws LibraryException {
+        if(Objects.equals(ISBN, "1234"))
+                throw new LibraryException("Books is blacklisted.");
+
         LocalDate today = LocalDate.now();
         var years = Period.between(this.birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), today).getYears();
 
