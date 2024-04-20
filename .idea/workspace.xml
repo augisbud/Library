@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9c76772-2505-4ac0-8182-e997a1fcf7b9" name="Changes" comment="OP3-Presented, OP4, OP5">
-      <change afterPath="$PROJECT_DIR$/src/exceptions/LibraryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/entities/RestrictedActions.java" afterDir="false" />
+    <list default="true" id="e9c76772-2505-4ac0-8182-e997a1fcf7b9" name="Changes" comment="OP4-Presented, OP5-Presented">
+      <change afterPath="$PROJECT_DIR$/src/factories/PublicationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/UnderageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/UnderageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/literature/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/literature/Publication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,7 +84,8 @@
       <workItem from="1710273094474" duration="8678000" />
       <workItem from="1710520273346" duration="55000" />
       <workItem from="1710929375730" duration="373000" />
-      <workItem from="1711527939158" duration="2853000" />
+      <workItem from="1711527939158" duration="2944000" />
+      <workItem from="1713618736206" duration="1618000" />
     </task>
     <task id="LOCAL−00001" summary="OP2">
       <option name="closed" value="true" />
@@ -109,7 +108,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1710328479154</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="OP4-Presented, OP5-Presented">
+      <option name="closed" value="true" />
+      <created>1711531091058</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1711531091058</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +125,8 @@
     <MESSAGE value="OP2" />
     <MESSAGE value="OP2-Presented" />
     <MESSAGE value="OP3-Presented, OP4, OP5" />
-    <option name="LAST_COMMIT_MESSAGE" value="OP3-Presented, OP4, OP5" />
+    <MESSAGE value="OP4-Presented, OP5-Presented" />
+    <option name="LAST_COMMIT_MESSAGE" value="OP4-Presented, OP5-Presented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -128,25 +135,6 @@
           <url>file://$PROJECT_DIR$/src/models/literature/Publication.java</url>
           <line>49</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/models/literature/Book.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/models/literature/Book.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/models/literature/Book.java</url>
-          <line>84</line>
-          <properties class="models.literature.Book" method="equals">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

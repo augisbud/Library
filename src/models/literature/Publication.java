@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-public class Publication {
+public class Publication implements Cloneable {
     public enum Genre {
         ACTION,
         COMEDY,
@@ -21,7 +21,7 @@ public class Publication {
 
     private static int count = 1;
 
-    private final int id = count++;
+    private int id = count++;
     private final String ISBN;
     private final Genre genre;
     private final String title;
@@ -69,5 +69,13 @@ public class Publication {
     @Override
     public String toString() {
         return new Gson().toJson(this);
+    }
+
+    @Override
+    public Publication clone() throws CloneNotSupportedException {
+        var clone = (Publication) super.clone();
+        clone.id = count++;
+
+        return clone;
     }
 }
