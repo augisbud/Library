@@ -1,6 +1,7 @@
 import exceptions.LibraryException;
 import exceptions.UnderageException;
 import factories.PublicationFactory;
+import jdk.jshell.spi.ExecutionControl;
 import models.entities.Person;
 import models.entities.RestrictedActions;
 import models.literature.Book;
@@ -20,9 +21,14 @@ public class Main {
         try {
             var clonedBook = book.clone();
 
+            book.setMinimumAge(50);
+            book.setFormat(Book.Format.EBOOK);
+            book.addRating(5);
+            book.takeBook(new Date());
+
             System.out.println("    Original Book: " + book);
             System.out.println("      Cloned Book: " + clonedBook);
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException | ExecutionControl.NotImplementedException e) {
             System.out.println(e.getMessage());
         }
 

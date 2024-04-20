@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9c76772-2505-4ac0-8182-e997a1fcf7b9" name="Changes" comment="OP4-Presented, OP5-Presented">
-      <change afterPath="$PROJECT_DIR$/src/factories/PublicationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/literature/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/literature/Publication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/literature/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/literature/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <workItem from="1710520273346" duration="55000" />
       <workItem from="1710929375730" duration="373000" />
       <workItem from="1711527939158" duration="2944000" />
-      <workItem from="1713618736206" duration="1618000" />
+      <workItem from="1713618736206" duration="2603000" />
     </task>
     <task id="LOCAL−00001" summary="OP2">
       <option name="closed" value="true" />

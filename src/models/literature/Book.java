@@ -3,9 +3,7 @@ package models.literature;
 import com.google.gson.Gson;
 import jdk.jshell.spi.ExecutionControl;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Book extends Publication {
     public enum Format {
@@ -14,10 +12,10 @@ public class Book extends Publication {
         EBOOK
     }
 
-    private final List<String> authors;
+    private List<String> authors;
     private final String edition;
-    private final Format format;
-    private final List<Integer> ratings = new ArrayList<Integer>();
+    private Format format;
+    private List<Integer> ratings = new ArrayList<Integer>();
     private boolean isTaken = false;
     private Date dateOfIssue;
     private Date issuedUntil;
@@ -27,6 +25,8 @@ public class Book extends Publication {
     public Format getFormat() { return this.format; }
     public boolean getIsTaken() { return this.isTaken; }
     public List<Integer> getRatings() { return this.ratings; }
+
+    public void setFormat(Format format) { this.format = format; }
 
     public void addRating(int rating) { ratings.add(rating); }
     public void takeBook(Date issuedUntil) throws ExecutionControl.NotImplementedException {
@@ -93,5 +93,18 @@ public class Book extends Publication {
             return false;
 
         return b.getISBN().equals(this.getISBN());
+    }
+
+    @Override
+    public Book clone() throws CloneNotSupportedException {
+        var clone = (Book) super.clone();
+
+        clone.authors = new ArrayList<String>();
+        clone.authors.addAll(this.authors);
+
+        clone.ratings = new ArrayList<Integer>();
+        clone.ratings.addAll(this.ratings);
+
+        return clone;
     }
 }
