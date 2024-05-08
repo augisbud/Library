@@ -2,55 +2,32 @@ package models.literature;
 
 import com.google.gson.Gson;
 
-import java.util.Date;
+import java.io.*;
+import java.util.List;
 import java.util.regex.Pattern;
 
-public class Publication implements Cloneable {
-    public enum Genre {
-        ACTION,
-        COMEDY,
-        DETECTIVE
-    }
-
-    public enum Language {
-        LT,
-        EN,
-        DK,
-        DE
-    }
-
+public class Publication implements Cloneable, Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private static int count = 1;
 
     private int id = count++;
     private final String ISBN;
-    private final Genre genre;
     private final String title;
     private final int pages;
-    private final Language language;
     private final String publisher;
-    private final Date publicationDate;
-    private int minimumAge;
 
     public int getId() { return this.id; }
     public String getISBN() { return this.ISBN; }
-    public Genre getGenre() { return this.genre; }
     public String getTitle() { return this.title; }
     public int getPages() { return this.pages; }
-    public Language getLanguage() { return this.language; }
     public String getPublisher() { return this.publisher; }
-    public Date getPublicationDate() { return this.publicationDate; }
-    public int getMinimumAge() { return this.minimumAge; }
-    public void setMinimumAge(int minimumAge) { this.minimumAge = minimumAge; }
 
-    public Publication(String ISBN, Genre genre, String title, int pages, Language language, String publisher, Date publicationDate, int minimumAge) {
+    public Publication(String ISBN, String title, int pages, String publisher) {
         this.ISBN = ISBN;
-        this.genre = genre;
         this.title = title;
         this.pages = pages;
-        this.language = language;
         this.publisher = publisher;
-        this.publicationDate = publicationDate;
-        this.minimumAge = minimumAge;
     }
 
     public String generateDisplayTitle() {
