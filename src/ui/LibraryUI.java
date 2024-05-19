@@ -12,12 +12,18 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Represents the graphical user interface for the library system.
+ */
 public class LibraryUI {
     private final DefaultListModel<String> publicationListModel;
     private List<Book> books = new ArrayList<>();
     private List<Journal> journals = new ArrayList<>();
     private final JComboBox<String> publicationTypeComboBox;
 
+    /**
+     * Constructs a new LibraryUI instance, creating and displaying the graphical user interface.
+     */
     public LibraryUI() {
         var frame = new JFrame("Library UI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,6 +96,11 @@ public class LibraryUI {
         frame.setVisible(true);
     }
 
+    /**
+     * Creates a new publication based on the selected publication type in the combo box.
+     *
+     * @param publicationTypeComboBox The combo box containing the publication types.
+     */
     private void createSelectedPublication(JComboBox<String> publicationTypeComboBox) {
         var selectedPublicationType = (String) publicationTypeComboBox.getSelectedItem();
 
@@ -100,6 +111,9 @@ public class LibraryUI {
         }
     }
 
+    /**
+     * Displays a dialog for adding information about a book.
+     */
     private void displayBookInput() {
         var bookFrame = new JFrame("Add a Book");
         bookFrame.setSize(400, 300);
@@ -136,6 +150,9 @@ public class LibraryUI {
         bookFrame.setVisible(true);
     }
 
+    /**
+     * Displays a dialog for adding information about a journal.
+     */
     private void displayJournalInput() {
         var journalFrame = new JFrame("Add a Journal");
         journalFrame.setSize(400, 300);
@@ -167,6 +184,9 @@ public class LibraryUI {
         journalFrame.setVisible(true);
     }
 
+    /**
+     * Updates the list of publications displayed in the user interface based on the selected publication type.
+     */
     private void updatePublicationList() {
         publicationListModel.clear();
         var selectedPublicationType = (String) publicationTypeComboBox.getSelectedItem();
@@ -182,6 +202,11 @@ public class LibraryUI {
         }
     }
 
+    /**
+     * Displays detailed information about a book in a separate dialog.
+     *
+     * @param book The book for which to display information.
+     */
     private void displayBookInformation(Book book) {
         var bookFrame = new JFrame("Information about a Book");
         bookFrame.setSize(400, 300);
@@ -201,6 +226,11 @@ public class LibraryUI {
         bookFrame.setVisible(true);
     }
 
+    /**
+     * Displays detailed information about a journal in a separate dialog.
+     *
+     * @param journal The journal for which to display information.
+     */
     private void displayJournalInformation(Journal journal) {
         var journalFrame = new JFrame("Information about a Journal");
         journalFrame.setSize(400, 300);
@@ -216,6 +246,12 @@ public class LibraryUI {
         journalFrame.setVisible(true);
     }
 
+    /**
+     * Updates the ownership status of a book and refreshes the UI accordingly.
+     *
+     * @param bookFrame The frame containing information about the book.
+     * @param book      The book for which to update ownership status.
+     */
     private void updateBookInformation(JFrame bookFrame, Book book) {
         try {
             if (book.getIsTaken())
@@ -231,6 +267,13 @@ public class LibraryUI {
         displayBookInformation(book);
     }
 
+    /**
+     * Adds a label and a value to the specified frame.
+     *
+     * @param frame     The frame to which the label and value will be added.
+     * @param labelText The text for the label.
+     * @param valueText The text for the value.
+     */
     private void addLabelAndValue(JFrame frame, String labelText, String valueText) {
         var panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         var label = new JLabel(labelText);
@@ -240,6 +283,13 @@ public class LibraryUI {
         frame.add(panel);
     }
 
+    /**
+     * Adds a label and a text field to the specified frame and returns the text field.
+     *
+     * @param frame     The frame to which the label and text field will be added.
+     * @param labelText The text for the label.
+     * @return The text field added to the frame.
+     */
     private JTextField addLabelAndFields(JFrame frame, String labelText) {
         var label = new JLabel(labelText);
         var field = new JTextField();
@@ -249,13 +299,26 @@ public class LibraryUI {
         return field;
     }
 
+    /**
+     * Handles mouse clicks on the publication list to display detailed information about the selected publication.
+     */
     class ButtonClickListener extends MouseAdapter {
         JList<String> list;
 
+        /**
+         * Constructs a new ButtonClickListener with the specified JList.
+         *
+         * @param list The JList to which the click listener is attached.
+         */
         ButtonClickListener(JList<String> list) {
             this.list = list;
         }
 
+        /**
+         * Handles mouse clicks on the publication list to display detailed information about the selected publication.
+         *
+         * @param e The MouseEvent representing the mouse click event.
+         */
         @Override
         public void mouseClicked(MouseEvent e) {
             var selectedPublicationType = (String) publicationTypeComboBox.getSelectedItem();
@@ -275,11 +338,27 @@ public class LibraryUI {
         }
     }
 
+    /**
+     * Custom cell renderer for the publication list to render buttons as list items.
+     */
     static class ButtonCellRenderer extends JButton implements ListCellRenderer<String> {
+        /**
+         * Constructs a new ButtonCellRenderer with opaque set to true.
+         */
         ButtonCellRenderer() {
             setOpaque(true);
         }
 
+        /**
+         * Renders the button cell for the publication list.
+         *
+         * @param list          The JList containing the publication list.
+         * @param value         The value of the cell.
+         * @param index         The index of the cell.
+         * @param isSelected    Whether the cell is selected.
+         * @param cellHasFocus  Whether the cell has focus.
+         * @return              The rendered component for the cell.
+         */
         @Override
         public Component getListCellRendererComponent(JList<? extends String> list, String value, int index, boolean isSelected, boolean cellHasFocus) {
             setText(value);
